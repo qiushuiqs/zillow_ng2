@@ -1,0 +1,24 @@
+<app-search-component (searchProperty)="refreshProperties($event)"></app-search-component>
+
+<div class="container header">
+  <h1 class="text-center">Welcome to Zillow</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+        
+    <div class="col-md-4" *ngFor="let property of properties; let i = index;">
+        <img src="{{property.mediaUrl}}" class="img-rounded thumbnail" alt="">
+        <h2>
+          <span >${{property.price}}</span>
+          <del class="text-danger" *ngIf="property.originalPrice">${{property.originalPrice}}</del>
+        </h2>
+        <p>{{property.address}}</p>
+        <p><a class="btn btn-primary viewDetail" href="#" role="button">View details &raquo;</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2017 XXX Company, Inc.</p>
+  </footer>
+</div>
